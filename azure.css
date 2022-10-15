@@ -1,0 +1,23 @@
+#az-tc-task-copy--chrome-extension--buttons-panel {
+    display: inline-block;
+    position: absolute;
+    background: white;
+    width: 30px;
+    height: 40px;
+    top: 0;
+    right: -30px;
+}
+
+#az-tc-task-copy--chrome-extension--copy-button {
+    background: rgb(134, 182, 254);
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#az-tc-task-copy--chrome-extension--copy-task-button {
+    background: rgb(155, 251, 155);
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}

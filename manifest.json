@@ -1,0 +1,31 @@
+{
+  "name": "az-tc-task-copy",
+  "version": "4.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "/images/paste.png",
+    "32": "/images/paste.png",
+    "48": "/images/paste.png",
+    "128": "/images/paste.png"
+},
+  "permissions": [
+    "webNavigation", "activeTab", "scripting"
+  ],
+  "action": {
+    "default_title": "Paste"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://dev.azure.com/*",
+        "https://web.timecockpit.com/*"
+      ],
+      "run_at": "document_idle",
+      "js": ["jquery-3.6.0.min.js", "azure.js"],
+      "css":["azure.css"]
+    }
+  ]
+}
