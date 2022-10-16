@@ -2,22 +2,22 @@
     display: inline-block;
     position: absolute;
     background: white;
-    width: 30px;
-    height: 40px;
+    width: 22px;
     top: 0;
-    right: -30px;
+    right: -22px;
 }
 
 #az-tc-task-copy--chrome-extension--copy-button {
-    background: rgb(134, 182, 254);
-    width: 30px;
-    height: 20px;
+    background: rgb(170, 200, 245);
+    width: 22px;
+    height: 22px;
     cursor: pointer;
+    margin-bottom: 1px;
 }
 
 #az-tc-task-copy--chrome-extension--copy-task-button {
-    background: rgb(155, 251, 155);
-    width: 30px;
-    height: 20px;
+    background: rgb(199, 243, 199);
+    width: 22px;
+    height: 22px;
     cursor: pointer;
 }

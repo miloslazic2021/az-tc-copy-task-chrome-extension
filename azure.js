@@ -1,23 +1,4 @@
 (function () {
-    const placeholderDiv = document.createElement("div");
-    placeholderDiv.id = 'az-tc-task-copy--chrome-extension--buttons-panel';
-
-    const copyTaskAndRequirementButton = createCopyButton();
-    const copyTaskButton = createCopyTaskOnlyButton();
-
-    placeholderDiv.append(copyTaskAndRequirementButton);
-    placeholderDiv.append(copyTaskButton);
-
-    window.addEventListener("load", function () {
-        jQuery(".tbTile.childTbTile")
-        .mouseover(function () {
-            jQuery(this).append(placeholderDiv);
-        })
-        .mouseout(function () {
-            jQuery(this).remove(placeholderDiv);
-        });
-    });
-
     function createCopyButton() {
         const copyButton = document.createElement("button");
         copyButton.id = "az-tc-task-copy--chrome-extension--copy-button";
@@ -65,4 +46,24 @@
         };
         return copyButton;
     }
+
+    const placeholderDiv = document.createElement("div");
+    placeholderDiv.id = 'az-tc-task-copy--chrome-extension--buttons-panel';
+
+    const copyTaskAndRequirementButton = createCopyButton();
+    const copyTaskButton = createCopyTaskOnlyButton();
+
+    placeholderDiv.append(copyTaskAndRequirementButton);
+    placeholderDiv.append(copyTaskButton);
+
+    window.addEventListener("load", function () {
+        jQuery(document).on("mouseenter", ".childTbTile", function () {
+            if (jQuery(this).parents('.taskboard-parent').length === 0) { // Do not show for a requirement
+                jQuery(this).append(placeholderDiv);
+            }
+        });
+        jQuery(document).on("mouseleave", ".childTbTile", function () {
+            jQuery(this).remove(placeholderDiv);
+        });
+    });
 })();
